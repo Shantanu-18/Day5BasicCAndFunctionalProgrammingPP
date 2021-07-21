@@ -6,22 +6,31 @@ namespace primeFactorisation
     {
         static void Main(string[] args)
         {
-             int i = 0;
-             int num = 0;
-             int factorial = 1;
-                
-            Console.Write("Enter the number: ");
-            num = Convert.ToInt32(Console.ReadLine());
-
-
-            for (i = 1; i <= num; i++)
+            Console.WriteLine("Enter number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= number; i++)
             {
-                factorial *= i;
-                Console.Write("The Factorial of {0} is: {1}\n", num, factorial);
+                if (number % i == 0)
+                {
+                    int count = 0;
+                    for (int j = 1; j <= i; j++)
+                    {
+                        if (i % j == 0)
+                        {
+                            count++;
+                        }
+
+                    }
+                    if (count == 2)
+                    {
+                        Console.WriteLine(i + " is Prime Factor : " + number);
+                    }
+                }
+
             }
+
+
         }
 
-        
     }
-    
 }
